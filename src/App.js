@@ -8,7 +8,7 @@ import Contact from "./pages/Contact";
 import "./App.css";
 
 function App() {
-  const cvPath = "/cv.pdf"; // Adjust the path if your CV is in a different location
+  const cvPath = "/cv.pdf"; // Ensure this is correct for the public folder
 
   const handleDownloadCV = () => {
     const link = document.createElement("a");
@@ -50,7 +50,7 @@ function App() {
 
           {/* View CV Link */}
           <a
-            href={cvPath} 
+            href={cvPath} // Direct link to the PDF
             target="_blank"
             rel="noopener noreferrer"
             style={{
