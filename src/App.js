@@ -8,6 +8,15 @@ import Contact from "./pages/Contact";
 import "./App.css";
 
 function App() {
+  const cvPath = "/cv.pdf"; // Adjust the path if your CV is in a different location
+
+  const handleDownloadCV = () => {
+    const link = document.createElement("a");
+    link.href = cvPath; 
+    link.download = "Aireen-Tabacon-CV.pdf"; 
+    link.click();
+  };
+
   return (
     <Router>
       <Navbar />
@@ -34,19 +43,14 @@ function App() {
               borderRadius: "5px",
               cursor: "pointer",
             }}
-            onClick={() => {
-              const link = document.createElement("a");
-              link.href = "/cv.pdf"; // Path to the PDF in the public folder
-              link.download = "Aireen-Tabacon-CV.pdf"; // Name for the downloaded file
-              link.click();
-            }}
+            onClick={handleDownloadCV}
           >
             Download CV
           </button>
 
           {/* View CV Link */}
           <a
-            href="/cv.pdf" // Path to the PDF in the public folder
+            href={cvPath} 
             target="_blank"
             rel="noopener noreferrer"
             style={{
